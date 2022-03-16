@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(ask, index) in askList" :key="index">{{ ask }}</div>
+    <div v-for="(ask, index) in askList" :key="index">{{ ask.title }}</div>
   </div>
 </template>
 
@@ -12,8 +12,13 @@ export default {
       askList: [],
     };
   },
-  created() {
-    fetchAskList().then((res) => (this.askList = res.data));
+  async created() {
+    try {
+      const result = await fetchAskList();
+      this.askList = result.data;
+    } catch (err) {
+      console.log(err);
+    }
   },
 };
 </script>
