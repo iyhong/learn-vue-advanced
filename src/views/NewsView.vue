@@ -8,11 +8,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      newsList: [],
-    };
-  },
   created() {
     this.$store.dispatch('FETCH_NEWS');
   },

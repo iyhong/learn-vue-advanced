@@ -21,6 +21,11 @@ export const store = new Vuex.Store({
       state.asks = asks;
     },
   },
+  getters: {
+    fetchedAsk(state) {
+      return state.asks;
+    },
+  },
   actions: {
     FETCH_NEWS(context) {
       fetchNewsList()
