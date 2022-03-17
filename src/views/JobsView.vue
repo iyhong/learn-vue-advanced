@@ -1,11 +1,12 @@
 <template>
   <div>
-    <div v-for="(job, index) in jobs" :key="index">{{ job.title }}</div>
+    <div v-for="(job, index) in this.$store.state.jobs" :key="index">
+      {{ job.title }}
+    </div>
   </div>
 </template>
 
 <script>
-import { fetchJobsList } from '../api';
 export default {
   data() {
     return {
@@ -13,9 +14,7 @@ export default {
     };
   },
   created() {
-    fetchJobsList()
-      .then((res) => (this.jobs = res.data))
-      .catch();
+    this.$store.dispatch('FETCH_JOBS');
   },
 };
 </script>
