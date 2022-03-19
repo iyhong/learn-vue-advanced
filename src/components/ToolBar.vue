@@ -1,8 +1,8 @@
 <template>
   <div class="header">
-    <router-link to="/news">news</router-link> /
-    <router-link to="/ask">ask</router-link> /
-    <router-link to="/jobs">jobs</router-link>
+    <router-link to="/news">News</router-link> /
+    <router-link to="/ask">Ask</router-link> /
+    <router-link to="/jobs">Jobs</router-link>
   </div>
 </template>
 
