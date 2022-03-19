@@ -3,6 +3,7 @@ import {
   fetchJobsList,
   fetchAskList,
   fetchUserInfo,
+  fetchItem,
 } from '../api';
 
 export default {
@@ -39,6 +40,15 @@ export default {
     fetchUserInfo(userName)
       .then((res) => {
         context.commit('SET_USER_INFO', res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  },
+  FETCH_ITEM(context, itemId) {
+    fetchItem(itemId)
+      .then((res) => {
+        context.commit('SET_ITEM', res.data);
       })
       .catch((err) => {
         console.error(err);
