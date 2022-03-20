@@ -1,20 +1,19 @@
 <template>
   <div>
     <section>
-      <!-- 질문 상세 정보 -->
-      <div class="user-container">
-        <div>
-          <i class="fa-solid fa-user"></i>
-        </div>
-        <div class="user-description">
+      <!-- 사용자 정보 -->
+      <UserProfile>
+        <template #userName>
           <router-link :to="`/user/${item.user}`">
             {{ item.user }}
           </router-link>
-          <div class="time">
-            {{ item.time_ago }}
-          </div>
-        </div>
-      </div>
+        </template>
+        <template #time>
+          {{ item.time_ago }}
+        </template>
+      </UserProfile>
+    </section>
+    <section>
       <h2>
         {{ item.title }}
       </h2>
@@ -27,7 +26,10 @@
 </template>
 
 <script>
+import UserProfile from '@/components/UserProfile.vue';
+
 export default {
+  components: { UserProfile },
   computed: {
     item() {
       return this.$store.state.item;
@@ -36,6 +38,7 @@ export default {
   created() {
     const itemId = this.$route.params.id;
     this.$store.dispatch('FETCH_ITEM', itemId);
+    this.$store.dispatch('FETCH_USER', this.item.user);
   },
 };
 </script>

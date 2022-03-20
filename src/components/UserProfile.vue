@@ -4,11 +4,11 @@
       <i class="fa-solid fa-user"></i>
     </div>
     <div class="user-description">
-      <div>{{ userInfo.id }}</div>
-
+      <slot name="userName"></slot>
       <div class="time">
-        {{ userInfo.created }}
+        <slot name="time"></slot>
       </div>
+      <slot name="karma"></slot>
     </div>
   </div>
 </template>
