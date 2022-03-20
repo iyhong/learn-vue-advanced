@@ -1,41 +1,41 @@
 import {
-  fetchNewsList,
-  fetchJobsList,
-  fetchAskList,
+  // fetchNewsList,
+  // fetchJobsList,
+  // fetchAskList,
   fetchUserInfo,
   fetchItem,
   fetchList,
 } from '../api';
 
 export default {
-  FETCH_NEWS(context) {
-    fetchNewsList()
-      .then((res) => {
-        context.commit('SET_NEWS', res.data);
-        return res;
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  },
-  FETCH_JOBS({ commit }) {
-    fetchJobsList()
-      .then(({ data }) => {
-        commit('SET_JOBS', data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  },
-  FETCH_ASKS(context) {
-    fetchAskList()
-      .then((res) => {
-        context.commit('SET_ASKS', res.data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  },
+  // FETCH_NEWS(context) {
+  //   fetchNewsList()
+  //     .then((res) => {
+  //       context.commit('SET_NEWS', res.data);
+  //       return res;
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // },
+  // FETCH_JOBS({ commit }) {
+  //   fetchJobsList()
+  //     .then(({ data }) => {
+  //       commit('SET_JOBS', data);
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // },
+  // FETCH_ASKS(context) {
+  //   fetchAskList()
+  //     .then((res) => {
+  //       context.commit('SET_ASKS', res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // },
   FETCH_USER(context, userName) {
     fetchUserInfo(userName)
       .then((res) => {
