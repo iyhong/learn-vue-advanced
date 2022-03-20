@@ -59,4 +59,3 @@ export default {
   font-size: 7px;
 }
 </style>
->
