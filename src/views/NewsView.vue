@@ -12,9 +12,17 @@ export default {
   created() {
     bus.$emit('start:spinner');
 
-    this.$store.dispatch('FETCH_NEWS');
-
-    bus.$emit('end:spinner');
+    setTimeout(() => {
+      this.$store
+        .dispatch('FETCH_NEWS')
+        .then(() => {
+          console.log('fetched!!');
+          bus.$emit('end:spinner');
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }, 3000);
   },
 };
 </script>

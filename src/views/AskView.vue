@@ -6,10 +6,24 @@
 
 <script>
 import ListItem from '@/components/ListItem.vue';
+import bus from '@/utils/bus';
+
 export default {
   components: { ListItem },
   created() {
-    this.$store.dispatch('FETCH_ASKS');
+    bus.$emit('start:spinner');
+
+    setTimeout(() => {
+      this.$store
+        .dispatch('FETCH_ASKS')
+        .then(() => {
+          console.log('fetched!!');
+          bus.$emit('end:spinner');
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }, 3000);
   },
 };
 </script>
