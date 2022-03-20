@@ -8,9 +8,7 @@
             {{ item.user }}
           </router-link>
         </template>
-        <template #time>
-          {{ item.time_ago }}
-        </template>
+        <template #time> Posted {{ item.time_ago }} </template>
       </UserProfile>
     </section>
     <section>
