@@ -38,17 +38,6 @@
 
 <script>
 export default {
-  created() {
-    console.log(this.$route.name);
-    const name = this.$route.name;
-    if (name === 'news') {
-      this.$store.dispatch('FETCH_NEWS');
-    } else if (name === 'ask') {
-      this.$store.dispatch('FETCH_ASKS');
-    } else if (name === 'jobs') {
-      this.$store.dispatch('FETCH_JOBS');
-    }
-  },
   computed: {
     listItems() {
       const name = this.$route.name;
