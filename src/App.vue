@@ -18,9 +18,11 @@ export default {
   components: { ToolBar, MySpinner },
   methods: {
     startSpinner() {
+      console.log('start');
       this.lodingStatus = true;
     },
     endSpinner() {
+      console.log('end');
       this.lodingStatus = false;
     },
   },

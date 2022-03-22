@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ListItem></ListItem>
+    <list-item></list-item>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   components: {
     ListItem,
   },
-  // computed() {
+  // mounted() {
   //   bus.$emit('end:spinner');
   // },
   mixins: [ListMixin],
